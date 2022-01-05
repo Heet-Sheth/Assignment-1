@@ -1,0 +1,193 @@
+body
+{
+	overflow:none;
+	margin:auto;
+	width:70%;
+}
+.menu
+{
+	top:0px;
+	width:100%;
+	height:auto;
+	position:fixed;
+	background-color: white;
+	z-index: 1;
+	margin-left:auto;
+	margin-right:auto;
+}
+.menu-item
+{
+	display:inline-block;
+	background-color:darkred;
+	color:gold;
+	padding:15px 20px;
+	width:120px;
+	text-align: center;
+	font-size:1.5em;
+	border-radius:15px;
+	margin:10px 5px;
+}
+.menu-img
+{
+	float: left;
+	margin:10px 20px;
+}
+.menu-items
+{
+	margin-top:15px;
+	display:inline-block;
+}
+a
+{
+	float:left;
+	text-decoration:none;
+	padding:0;
+	margin:10px 10px 10px 10px;
+}
+.slider
+{
+	width:100%;
+	height: 600px;
+	animation: slideimage 12s infinite;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+@keyframes slideimage {
+	0%{background-image: url("a1.jpg");}
+	25%{background-image: url("a2.jpg");}
+	50%{background-image: url("a3.jpg");}
+	75%{background-image: url("a4.jpg");}
+	100%{background-image: url("a1.jpg");}
+}
+.tagline
+{
+	margin-top:70px;
+	color:orange;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-size:2.5em;
+	text-shadow: 2.5px 2.5px black;
+}
+.aboutText
+{
+	width:100%;
+}
+.desc
+{
+	font-size: 1.2em;
+	margin-top: 20px;
+}
+.deals
+{
+	margin-top:30px;
+	width: 100%;
+}
+.offerTitle
+{
+	color:darkred;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+.dealimages
+{
+	border: 8px solid orange;
+	border-radius: 20px;
+	margin: 20px;
+	align-items: center;
+	box-shadow: 5px 5px 5px black;
+}
+.bill
+{
+	background-color:darkred;
+	border-radius: 20px;
+	border:none;
+	padding-bottom: 30px;
+	width:100%;
+}
+.userintbill
+{
+	margin: 20px 20px auto 20px;
+}
+.billtitle
+{
+	color:white;
+	text-align: center;
+	padding-top: 10px;
+	font-size: 1.5em;
+}
+label
+{
+	color:white;
+	font-weight: bold;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+td:first-child
+{
+	width:300px;
+}
+.price > input[type=text],input[type=number]
+{
+	width:70px;
+}
+.grid-container
+{
+	display: grid;
+	grid-template-columns: auto auto;
+}
+.bottomLeft
+{
+	float: left;
+	width:850px;
+}
+.soup-schedule
+{
+	width: 290px;;
+	float:right;
+	position: relative;
+	right:0;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin-top: 95px;
+}
+.soup-title
+{
+	background-color: darkred;
+	color:white;
+	font-family:cursive;
+	font-size: 1.6em;
+}
+.soup-title,.soup-text,.soup-box
+{
+	margin:15px auto;
+	width:100%;
+	height: 30px;
+	text-align: center;
+	vertical-align:middle;
+}
+.soup-box
+{
+	color: red;
+	border-width:3px 3px 8px 0px;
+	border-style: inset;
+	border-color: darkred;
+}
+.footer
+{
+	width:100%;
+	height: 50px;
+	background-color: darkred;
+	position:relative;
+	margin-top: 10px;	
+	padding:10px;
+	margin-bottom: 10px;
+}
+.copyright-text
+{
+	position: absolute;
+	right:0px;
+	color: white;
+	font-size: 1.4em;
+	vertical-align: middle;
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 5px;
+}
