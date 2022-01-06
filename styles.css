@@ -91,6 +91,12 @@ a
 	font-weight: bold;
 	text-align: center;
 }
+.offerimages
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
 .dealimages
 {
 	border: 8px solid orange;
