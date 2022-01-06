@@ -1,8 +1,7 @@
-body
+.body-shrink
 {
-	overflow:none;
 	margin:auto;
-	width:70%;
+	width:90%;
 }
 a{
 	text-decoration: none;
@@ -36,19 +35,21 @@ a{
 {
 	width: 100%;
 	top:20px;
+	transform: translate(0,-20px);
 	height:fit-content;
+	z-index: 1;
 	margin-bottom: 30px;
 	background-color: white;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	position: sticky;
 }
 .slider
 {
 	width:100%;
-	height: 600px;
+	height: 700px;
 	animation: slideimage 12s infinite;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -89,18 +90,28 @@ a{
 	font-weight: bold;
 	text-align: center;
 }
-.offerimages
+.offerImages
 {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+@media (max-width:800px) {
+	.offerimages
+	{
+		flex-direction: column;
+		align-items: center;
+		margin-right: auto;
+		margin-left: auto	;
+	}
+	
 }
 .dealimages
 {
 	border: 8px solid orange;
 	border-radius: 20px;
 	margin: 20px;
-	align-items: center;
 	box-shadow: 5px 5px 5px black;
 }
 .bill
@@ -139,22 +150,28 @@ td:first-child
 .grid-container
 {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: space-between;
+}
+@media (max-width:800px) {
+	.grid-container
+	{
+		flex-direction: column;
+	}
+	
 }
 .bottomLeft
 {
-	float: left;
-	width:850px;
+	width:70%;
+	align-self: center;
 }
 .soup-schedule
 {
-	width: 290px;;
-	float:right;
+	width: 25%;;
 	position: relative;
 	right:0;
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	margin-top: 95px;
+	align-self: center;
 }
 .soup-title
 {
@@ -167,8 +184,9 @@ td:first-child
 {
 	margin:15px auto;
 	width:100%;
-	height: 30px;
+	height: auto;
 	text-align: center;
+	padding: 10px;
 	vertical-align:middle;
 }
 .soup-box
@@ -176,13 +194,11 @@ td:first-child
 	color: red;
 	border-width:3px 3px 8px 0px;
 	border-style: inset;
-	padding-top: 10px;
 	border-color: darkred;
 }
 .soup-text
 {
 	margin-bottom: 5px;
-	padding-top: 10px;
 }
 .footer
 {
