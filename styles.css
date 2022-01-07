@@ -1,0 +1,23 @@
+.main
+{
+	background-color:#ddd;
+}
+table
+{
+	border-spacing:0;
+	margin:5px;
+}
+td
+{
+	padding:10px 20px 10px 20px;
+}
+.mainBorder
+{
+	border:15px solid #ddd;
+	margin-left:50%;
+	margin-top:10%;
+	overflow:auto;
+	display:inline-block;
+	padding:10px 20px 20px 20px;
+	transform:translate(-50%,0);
+}

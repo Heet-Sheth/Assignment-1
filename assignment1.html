@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment-1</title>
+	<style type="text/css">
+	*
+	{
+		font-size:101%;
+		font-family:"Lucida Console", "Courier New", monospace;
+	}
+	td
+	{
+		min-width:200px;
+		padding:5px 0 0 5px;
+	}
+	form
+	{
+		width:25%;
+		margin:auto;
+	}
+	img,h2
+	{
+		float:left;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button 
+	{
+  		-webkit-appearance: none;
+  		margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] 
+	{
+		-moz-appearance: textfield;
+	}
+	input[type=text],textarea,input[type=submit],input[type=reset],input[type=number],select
+	{
+		border-radius:5px;
+		border:1px solid black;
+	}
+	input[type=submit],input[type=reset]
+	{
+		background-color:orange;
+		color:white;
+		outline:none;
+		box-shadow:none;
+		border:none;
+	}
+	input[type=submit]:hover,input[type=reset]:hover
+	{
+		border:2px solid red;
+	}
+	</style>
+</head>
+<body>
+<form>
+	<table>
+		<tr>
+			<td colspan="2">
+				<img src="logo.jpg" width="70" height="70" alt="logo" />
+				<h1 style="color:red; font-size:30px;">Employee Registration Form</h1>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="Radio" name="abr" value="Mr." id="amr">
+				<label for="amr">Mr.</label>
+				<input type="Radio" name="abr" value="Mrs." id="amrs">
+				<label for="amrs">Mrs.</label>
+				<input type="Radio" name="abr" value="Ms." id="ams">
+				<label for="ams">Ms.</label>
+			</td>
+		</tr>
+		<tr>
+			<td>First name</td>
+			<td><input type="text" placeholder="First Name"></td>
+		</tr>
+		<tr>
+			<td>Last name</td>
+			<td><input type="text" placeholder="Last Name"></td>
+		</tr>
+		<tr>
+			<td>Address Line 1</td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td>Address Line 2</td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td>City</td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td>State</td>
+			<td>
+				<select name="states" style="background-color:orange; color:white;">
+					<option>Gujarat</option>
+					<option>kerela</option>
+					<option>Rajasthan</option>
+					<option>U.P.</option>
+					<option>Maharastra</option>
+					<option>J.K.</option>
+					<option>Tamil Nadu</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Zip Code</td>
+			<td><input type="number"></td>
+		</tr>
+		<tr>
+			<td>Upload Photo</td>
+			<td><input type="file"></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><input type="text" style="width:300px;"></td>
+		</tr>
+		<tr>
+			<td>Mobile</td>
+			<td><input type="text" placeholder="+91"></td>
+		</tr>
+		<tr>
+			<td style="vertical-align:text-top;">Languages Known</td>
+			<td>
+				<input type="checkbox" name="langs" id="lg" value="Gujarati">
+				<label for="lg">Gujarati</label><br/>
+				<input type="checkbox" name="langs" id="lh" value="Hindi">
+				<label for="lh">Hindi</label><br/>
+				<input type="checkbox" name="langs" id="le" value="English">
+				<label for="le">English</label><br/>
+				<input type="checkbox" name="langs" id="lm" value="Marathi">
+				<label for="lm">Marathi</label>
+			</td>
+		</tr>
+		<tr>
+			<td>Additional Information</td>
+			<td>
+				<textarea rows=5 cols=20 placeholder="optional..."></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="submit" value="submit"/>
+				<input type="reset" value="reset"/>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
