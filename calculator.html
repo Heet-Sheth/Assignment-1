@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<title>Calculator</title>
+		<style type="text/css">
+			.calc-body {
+				display: inline-grid;
+				width: 400px;
+				height: 400px;
+				gap: 10px;
+				margin-top: 60px;
+				margin-left: 50%;
+				transform: translate(-50%, 0);
+				grid-template-columns: auto auto auto auto;
+			}
+			.calc-body > * {
+				background-color: rgb(38, 203, 253);
+				color: white;
+				font-size: 1.8em;
+				font-weight: bold;
+				border: none;
+				border-radius: 15px;
+				padding: 10px;
+				height: 70px;
+			}
+			.calc-button {
+				width: 100px;
+			}
+			.calc-button:hover {
+				background-color: rgb(255, 172, 17);
+			}
+			.calc-screen {
+				grid-column: 1/5;
+				margin-bottom: 0;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="calc-body">
+			<div class="calc-screen"> </div>
+			<button class="calc-button" onclick="display('1')">1</button>
+			<button class="calc-button" onclick="display('2')">2</button>
+			<button class="calc-button" onclick="display('3')">3</button>
+			<button class="calc-button" onclick="clearBoxContent()">C</button>
+			<button class="calc-button" onclick="display('4')">4</button>
+			<button class="calc-button" onclick="display('5')">5</button>
+			<button class="calc-button" onclick="display('6')">6</button>
+			<button class="calc-button" onclick="display('-')">-</button>
+			<button class="calc-button" onclick="display('7')">7</button>
+			<button class="calc-button" onclick="display('8')">8</button>
+			<button class="calc-button" onclick="display('9')">9</button>
+			<button class="calc-button" onclick="display('*')">x</button>
+			<button class="calc-button" onclick="display('.')">.</button>
+			<button class="calc-button" onclick="display('0')">0</button>
+			<button class="calc-button" onclick="backspace()">⌫</button>
+			<button class="calc-button" onclick="display('/')">÷</button>
+			<button class="calc-button" onclick="display('%')">%</button>
+			<button class="calc-button" onclick="display('^')">^</button>
+			<button class="calc-button" onclick="equal()">=</button>
+			<button class="calc-button" onclick="display('+')">+</button>
+		</div>
+		<script>
+			function clearBoxContent()
+			{
+				document.querySelector('.calc-screen').innerHTML = " ";
+			}
+			function backspace()
+			{
+				let x=document.querySelector('.calc-screen').innerHTML;
+				document.querySelector('.calc-screen').innerHTML = x.slice(0,x.length-1);
+			}
+			function display(a)
+			{
+				let x=document.querySelector('.calc-screen').innerHTML;
+				document.querySelector('.calc-screen').innerHTML = x + a;
+			}
+			function equal()
+			{
+				let x=document.querySelector('.calc-screen').innerHTML;
+				document.querySelector('.calc-screen').innerHTML = eval(x);
+			}
+		</script>
+	</body>
+</html>
