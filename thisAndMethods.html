@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>JS call apply bind</title>
+	</head>
+	<body>
+	<script>
+		var varib = {
+			word1:'Hello',
+			word2:'Hii',
+			greet : function()
+			{
+				var greets=this.word1+' '+this.word2;
+				return greets;
+			}
+		}
+
+		var sum = function (a, b) {
+			document.writeln(this.greet()+' Answer is:'+(a+b));
+		};
+		sum.call(varib,10,20);
+		sum.apply(varib,[40,50]);
+		let x=sum.bind(varib);
+		x(100,200);
+	</script>
+	</body>
+</html>
