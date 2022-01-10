@@ -54,7 +54,7 @@
 			<button class="calc-button" onclick="display('0')">0</button>
 			<button class="calc-button" onclick="backspace()">⌫</button>
 			<button class="calc-button" onclick="display('/')">÷</button>
-			<button class="calc-button" onclick="display('/100*')">%</button>
+			<button class="calc-button" onclick="display('%')">%</button>
 			<button class="calc-button" onclick="display('^')">^</button>
 			<button class="calc-button" onclick="equal()">=</button>
 			<button class="calc-button" onclick="display('+')">+</button>
@@ -77,6 +77,7 @@
 			function equal()
 			{
 				let x=document.querySelector('.calc-screen').innerHTML;
+				x=x.replace('%','/100*');
 				document.querySelector('.calc-screen').innerHTML = eval(x);
 			}
 		</script>
