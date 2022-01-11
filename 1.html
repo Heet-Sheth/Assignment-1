@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>setInterval & setTimeout</title>
+	</head>
+	<body>
+		<script>
+			function delay() {
+				return new Promise((resolve) => setTimeout(resolve, 5000));
+			}
+			function firstname() {
+				document.write("Heet");
+			}
+			function lastname() {
+				document.write(" Sheth");
+			}
+			delay()
+				.then(() => firstname())
+				.then(() => delay())
+				.then(() => lastname());
+		</script>
+	</body>
+</html>
