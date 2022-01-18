@@ -20,8 +20,15 @@ form
 	margin-top: 200px;
 	border-radius: 0px 40px;
 	align-content: center;
+	box-shadow: 3px 3px 2px grey;
 }
 #disp-screen
 {
 	color: red;
+}
+#success-login
+{
+	color:green;
+	border: 1px solid green;
+	font-size: 3em;
 }
