@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { Component } from "react";
 import "./login.css";
 
@@ -36,7 +37,7 @@ class Login extends Component {
 			Email: "",
 			Password: "",
 			errorMsg: "",
-			isValidate: true
+			isValidate: false
 		};
 	}
 	handleEmail = (e) => {
@@ -46,8 +47,8 @@ class Login extends Component {
 		this.setState({ Password: e.target.value });
 	};
 	compare = () => {
+		this.setState({isValidate: false});
 		const { Email, Password } = this.state || {};
-		document.getElementById('disp-screen').style.color = 'red';
 		if (Email === '') {
 			if (Password === '') this.setState({ errorMsg: 'Please enter Email id and Password' });
 			else this.setState({ errorMsg: 'Please enter Email id',isValidate: false });
@@ -57,7 +58,7 @@ class Login extends Component {
 			id_password.forEach((element) => {
 				if (element.Email === Email) {
 					if (element.Password === Password) {
-						document.getElementById('disp-screen').style.color = 'green';
+						this.setState({isValidate: true});
 						this.setState({errorMsg: "Welcome, "+element.Name+" Login Successfull !!!"});
 					} else {
 						this.setState({ errorMsg: 'Password Incorrect!' });
@@ -69,7 +70,11 @@ class Login extends Component {
 		}
 	};
 	render() {
-		const { Email, Password,errorMsg } = this.state || {};
+		const { Email, Password,errorMsg,isValidate } = this.state || {};
+		const colorClasses=classNames({
+			'color-green': isValidate,
+			'color-red': !isValidate
+		});
 		return (
 			<div className="main-body">
 				<h2>LOGIN</h2>
@@ -101,7 +106,7 @@ class Login extends Component {
 						onClick={this.compare}
 					/>
 				</form>
-				<div id="disp-screen">{errorMsg}</div>
+				<div id="disp-screen" className={colorClasses}>{errorMsg}</div>
 			</div>
 		);
 	}
