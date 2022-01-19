@@ -35,6 +35,8 @@ class Login extends Component {
 		this.state = {
 			Email: "",
 			Password: "",
+			errorMsg: "",
+			isValidate: true
 		};
 	}
 	handleEmail = (e) => {
@@ -43,37 +45,31 @@ class Login extends Component {
 	handlePassword = (e) => {
 		this.setState({ Password: e.target.value });
 	};
-	render() {
+	compare = () => {
 		const { Email, Password } = this.state || {};
-		const compare = () => {
-			document.getElementById("disp-screen").style.color = "red";
-			if (Email === "") {
-				if (Password === "")
-					document.getElementById("disp-screen").innerHTML =
-						"Please enter Email id and Password";
-				else
-					document.getElementById("disp-screen").innerHTML =
-						"Please enter Email id";
-			} else if (Email !== "" && Password === "")
-				document.getElementById("disp-screen").innerHTML =
-					"Please enter Password";
-			else {
-				id_password.forEach((element) => {
-					if (element.Email === Email) {
-						if (element.Password === Password) {
-							document.getElementById("disp-screen").style.color = "green";
-							document.getElementById(
-								"disp-screen"
-							).innerHTML = `Welcome ${element.Name} <br> Login Successful!!!!`;
-						} else
-							document.getElementById("disp-screen").innerHTML =
-								"Password Incorrect!";
-					} else
-						document.getElementById("disp-screen").innerHTML =
-							"User not found!";
-				});
-			}
-		};
+		document.getElementById('disp-screen').style.color = 'red';
+		if (Email === '') {
+			if (Password === '') this.setState({ errorMsg: 'Please enter Email id and Password' });
+			else this.setState({ errorMsg: 'Please enter Email id',isValidate: false });
+		} else if (Email !== '' && Password === '') {
+			this.setState({ errorMsg: 'Please enter Password' });
+		} else {
+			id_password.forEach((element) => {
+				if (element.Email === Email) {
+					if (element.Password === Password) {
+						document.getElementById('disp-screen').style.color = 'green';
+						this.setState({errorMsg: "Welcome, "+element.Name+" Login Successfull !!!"});
+					} else {
+						this.setState({ errorMsg: 'Password Incorrect!' });
+					}
+				} else {
+					this.setState({ errorMsg: 'User not found!' });
+				}
+			});
+		}
+	};
+	render() {
+		const { Email, Password,errorMsg } = this.state || {};
 		return (
 			<div className="main-body">
 				<h2>LOGIN</h2>
@@ -102,10 +98,10 @@ class Login extends Component {
 						className="form-content"
 						type="button"
 						value="submit"
-						onClick={compare}
+						onClick={this.compare}
 					/>
 				</form>
-				<div id="disp-screen"></div>
+				<div id="disp-screen">{errorMsg}</div>
 			</div>
 		);
 	}
