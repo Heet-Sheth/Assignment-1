@@ -1,0 +1,59 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	border-radius: 10px 40px;
+	width: 400px;
+	margin: auto;
+	margin-top: 100px;
+	padding: 30px;
+}
+.container > label {
+	margin: 10px 20px;
+}
+.color-green {
+	color: green;
+}
+.color-red {
+	color: red;
+}
+#demo {
+	text-align: center;
+	margin-top: 30px;
+	font-size: 1.2em;
+}
+.form-element {
+	width: 100%;
+	margin-top: 10px;
+}
+.form-button {
+	background-color: black;
+	color: white;
+	width: 60%;
+	border-radius: 30px;
+	font-weight: bold;
+	padding: 5px;
+	margin: 10px auto auto auto;
+	text-align: center;
+}
+.img,
+.text-cont {
+	float: left;
+	margin: auto 20px;
+	font-size: 1.15em;
+}
+.no-addr {
+	margin: auto 10px;
+}
+.addr {
+	margin: auto 20px;
+}
+.card {
+	width: 400px;
+	height: 200px;
+	border: 1px solid black;
+	border-radius: 10px 40px;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
