@@ -36,6 +36,10 @@
 	margin: 10px auto auto auto;
 	text-align: center;
 }
+.disab {
+	background-color: white;
+	color: black;
+}
 .img,
 .text-cont {
 	float: left;
@@ -56,4 +60,8 @@
 	display: flex;
 	flex-direction: column;
 	margin: auto;
+}
+.condition {
+	width: 100%;
+	text-align: center;
 }
