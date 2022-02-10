@@ -1,6 +1,6 @@
 .link {
   text-decoration: none;
-  color: yellow;
+  color: white;
   text-align: center;
   border: solid white;
   width: 80%;
@@ -9,9 +9,6 @@
   padding: 10px;
   font-size: 1.3em;
   font-weight: bold;
-}
-.active {
-  color: red;
 }
 .active::after {
   content: "➤";
