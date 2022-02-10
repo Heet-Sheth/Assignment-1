@@ -2,12 +2,32 @@ form{
     display: flex;
     flex-direction: column;
     width: 200px;
+    border: 1px solid white;
+    padding: 30px;
+    color: white;
+    background-color: black;
+    border-radius: 10px 30px;
 }
 form > *{
     margin: 10px 0;
+    color: white;
+}
+input{
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    text-align: center;
 }
 .hobby
 {
     display: flex;
     flex-direction: column;
+}
+*{
+    background-color:black;
+}
+input[type=submit]:hover
+{
+    color: black;
+    background-color: white;
 }
