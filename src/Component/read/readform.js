@@ -52,7 +52,7 @@ export default function ReadForm() {
         </td>
         <td>
           <button onClick={(e) => updateData(element, hobbyArray)}> ✎ </button>
-          <button onClick={(e) => deleteData(element.id)}> ⚔ </button>
+          <button onClick={(e) => deleteData(element.id)}> ✗ </button>
         </td>
       </tr>
     );
