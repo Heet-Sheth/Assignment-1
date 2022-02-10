@@ -1,0 +1,13 @@
+form{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+form > *{
+    margin: 10px 0;
+}
+.hobby
+{
+    display: flex;
+    flex-direction: column;
+}
