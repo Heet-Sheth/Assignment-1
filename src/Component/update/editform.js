@@ -24,7 +24,6 @@ export default function UpdateForm() {
       Games: hobbySep[4] === "true" ? true : false,
     },
   });
-  console.log(userData.hobby);
   const handlechange = (e) => {
     let { name, value } = e.target;
     if (name === "hobby") {

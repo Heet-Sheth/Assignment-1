@@ -26,7 +26,6 @@ export default function AddForm() {
       setData((prev) => ({ ...prev, hobby }));
     } else setData((prev) => ({ ...prev, [name]: value }));
   };
-  console.log(userData);
   const handleUpload = (e) => {
     e.preventDefault();
     axios({
