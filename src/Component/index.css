@@ -11,6 +11,7 @@
   font-weight: bold;
 }
 .active::after {
+  position: absolute;
   content: "➤";
   margin-left: 20px;
 }
