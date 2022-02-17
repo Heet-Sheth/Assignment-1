@@ -34,7 +34,7 @@ export default function Index() {
               <Route path="/read">
                 <ReadForm />
               </Route>
-              <Route path="/edit/:id/:fnm/:lnm/:age/:gen/:hobby">
+              <Route path="/edit">
                 <UpdateForm />
               </Route>
             </Switch>

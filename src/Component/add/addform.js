@@ -1,6 +1,5 @@
 import axios from "axios";
 import { React, useState } from "react";
-import { Route } from "react-router-dom/cjs/react-router-dom.min";
 import ReadForm from "../read/readform";
 import "./addform.css";
 
@@ -18,6 +17,7 @@ export default function AddForm() {
       Games: false,
     },
   });
+  const [bool, setBool] = useState(false);
   const handlechange = (e) => {
     let { name, value } = e.target;
     if (name === "hobby") {
@@ -42,114 +42,114 @@ export default function AddForm() {
       .then((res) => {
         alert("Success!!!");
         window.history.pushState("data", "title", "/read");
-        <Route path="/read">
-          <ReadForm />
-        </Route>;
-        window.location.reload();
+        setBool(true);
       })
       .catch((error) => alert(error));
   };
   return (
     <div>
-      <form onSubmit={(e) => handleUpload(e)}>
-        <label>
-          First name:
-          <input
-            type="text"
-            name="fnm"
-            placeholder="First name"
-            onChange={(e) => handlechange(e)}
-          />
-        </label>
-        <label>
-          Last name:
-          <input
-            type="text"
-            name="lnm"
-            placeholder="Last name"
-            onChange={(e) => handlechange(e)}
-          />
-        </label>
-        <label>
-          Age:
-          <input
-            type="numer"
-            name="age"
-            placeholder="Age"
-            onChange={(e) => handlechange(e)}
-          />
-        </label>
-        <label>
-          Gender:
+      {!bool && (
+        <form onSubmit={(e) => handleUpload(e)}>
           <label>
+            First name:
             <input
-              type="radio"
-              name="gen"
-              value="male"
+              type="text"
+              name="fnm"
+              placeholder="First name"
               onChange={(e) => handlechange(e)}
             />
-            Male
           </label>
           <label>
+            Last name:
             <input
-              type="radio"
-              name="gen"
-              value="female"
+              type="text"
+              name="lnm"
+              placeholder="Last name"
               onChange={(e) => handlechange(e)}
             />
-            Female
-          </label>
-        </label>
-        <label className="hobby">
-          Hobbies:
-          <label>
-            <input
-              type="checkbox"
-              name="hobby"
-              value="Music"
-              onChange={(e) => handlechange(e)}
-            />
-            Music
           </label>
           <label>
+            Age:
             <input
-              type="checkbox"
-              name="hobby"
-              value="Cricket"
+              type="numer"
+              name="age"
+              placeholder="Age"
               onChange={(e) => handlechange(e)}
             />
-            Cricket
           </label>
           <label>
-            <input
-              type="checkbox"
-              name="hobby"
-              value="Football"
-              onChange={(e) => handlechange(e)}
-            />
-            Football
+            Gender:
+            <label>
+              <input
+                type="radio"
+                name="gen"
+                value="male"
+                onChange={(e) => handlechange(e)}
+              />
+              Male
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="gen"
+                value="female"
+                onChange={(e) => handlechange(e)}
+              />
+              Female
+            </label>
           </label>
-          <label>
-            <input
-              type="checkbox"
-              name="hobby"
-              value="Movies"
-              onChange={(e) => handlechange(e)}
-            />
-            Movies
+          <label className="hobby">
+            Hobbies:
+            <label>
+              <input
+                type="checkbox"
+                name="hobby"
+                value="Music"
+                onChange={(e) => handlechange(e)}
+              />
+              Music
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="hobby"
+                value="Cricket"
+                onChange={(e) => handlechange(e)}
+              />
+              Cricket
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="hobby"
+                value="Football"
+                onChange={(e) => handlechange(e)}
+              />
+              Football
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="hobby"
+                value="Movies"
+                onChange={(e) => handlechange(e)}
+              />
+              Movies
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="hobby"
+                value="Games"
+                onChange={(e) => handlechange(e)}
+              />
+              Games
+            </label>
           </label>
-          <label>
-            <input
-              type="checkbox"
-              name="hobby"
-              value="Games"
-              onChange={(e) => handlechange(e)}
-            />
-            Games
-          </label>
-        </label>
-        <input type="submit" value="submit" />
-      </form>
+          <input type="submit" value="submit" />
+        </form>
+      )}
+      {bool && <ReadForm />}
     </div>
   );
 }

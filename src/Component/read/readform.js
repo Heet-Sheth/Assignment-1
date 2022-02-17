@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Route } from "react-router-dom";
 import UpdateForm from "../update/editform";
 import "./readform.css";
 export default function ReadForm() {
   const [userData, setData] = useState([]);
+  const [deleted, setDelete] = useState(true);
+  const [bool, setBool] = useState(false);
+  const [update, setUpdatedData] = useState([]);
   useEffect(() => {
     axios
       .get("https://61fd0f4cf62e220017ce42d7.mockapi.io/UserTable")
@@ -20,21 +22,16 @@ export default function ReadForm() {
         let index = data1.findIndex((element) => element.id === resp.data.id);
         data1.splice(index, 1);
         setData(data1);
-        window.location.reload();
+        setDelete(false);
+        setDelete(true);
       });
   };
-  const updateData = (element, array) => {
-    window.history.pushState(
-      "data",
-      "title",
-      `/edit/${element.id}/${element.fnm}/${element.lnm}/${element.age}/${element.gender}/${array}`
-    );
-    <Route path="/edit/:id/:fnm/:lnm/:age/:gen/:hobby">
-      <UpdateForm />
-    </Route>;
-    window.location.reload();
+  const updateData = (element) => {
+    window.history.pushState("data", "title", "/edit");
+    setUpdatedData(element);
+    setBool(true);
   };
-  const display = userData.map((element) => {
+  const display = Object.values(userData).map((element) => {
     let hobbyArray = Object.values(element.hobby);
     return (
       <tr>
@@ -51,7 +48,7 @@ export default function ReadForm() {
             (hobbyArray[4] ? "Game " : " ")}
         </td>
         <td>
-          <button onClick={(e) => updateData(element, hobbyArray)}> ✎ </button>
+          <button onClick={(e) => updateData(element)}> ✎ </button>
           <button onClick={(e) => deleteData(element.id)}> ✗ </button>
         </td>
       </tr>
@@ -59,19 +56,26 @@ export default function ReadForm() {
   });
 
   return (
-    <div className="apos">
-      <table>
-        <tr>
-          <th>Id</th>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Age</th>
-          <th>Gender</th>
-          <th>Hobbies</th>
-          <th>Options</th>
-        </tr>
-        {display}
-      </table>
+    <div>
+      {deleted && (
+        <div className="apos">
+          {!bool && (
+            <table>
+              <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Hobbies</th>
+                <th>Options</th>
+              </tr>
+              {display}
+            </table>
+          )}
+          {bool && <UpdateForm data={update} />}
+        </div>
+      )}
     </div>
   );
 }
