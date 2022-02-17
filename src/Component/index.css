@@ -15,10 +15,6 @@
   content: "➤";
   margin-left: 20px;
 }
-ul {
-  list-style-type: none;
-  background-color: aqua;
-}
 .body {
   flex: 90%;
   display: flex;
