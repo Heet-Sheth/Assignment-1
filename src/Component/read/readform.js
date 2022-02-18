@@ -34,24 +34,26 @@ export default function ReadForm() {
   const display = Object.values(userData).map((element) => {
     let hobbyArray = Object.values(element.hobby);
     return (
-      <tr>
-        <td>{element.id}</td>
-        <td>{element.fnm}</td>
-        <td>{element.lnm}</td>
-        <td>{element.age}</td>
-        <td>{element.gender}</td>
-        <td>
-          {(hobbyArray[0] ? "Music " : " ") +
-            (hobbyArray[1] ? "Cricket " : " ") +
-            (hobbyArray[2] ? "Football " : " ") +
-            (hobbyArray[3] ? "Movies " : " ") +
-            (hobbyArray[4] ? "Game " : " ")}
-        </td>
-        <td>
-          <button onClick={(e) => updateData(element)}> ✎ </button>
-          <button onClick={(e) => deleteData(element.id)}> ✗ </button>
-        </td>
-      </tr>
+      <tbody>
+        <tr>
+          <td>{element.id}</td>
+          <td>{element.fnm}</td>
+          <td>{element.lnm}</td>
+          <td>{element.age}</td>
+          <td>{element.gender}</td>
+          <td>
+            {(hobbyArray[0] ? "Music " : " ") +
+              (hobbyArray[1] ? "Cricket " : " ") +
+              (hobbyArray[2] ? "Football " : " ") +
+              (hobbyArray[3] ? "Movies " : " ") +
+              (hobbyArray[4] ? "Game " : " ")}
+          </td>
+          <td>
+            <button onClick={(e) => updateData(element)}> ✎ </button>
+            <button onClick={(e) => deleteData(element.id)}> ✗ </button>
+          </td>
+        </tr>
+      </tbody>
     );
   });
 
@@ -61,15 +63,17 @@ export default function ReadForm() {
         <div className="apos">
           {!bool && (
             <table>
-              <tr>
-                <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Hobbies</th>
-                <th>Options</th>
-              </tr>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Age</th>
+                  <th>Gender</th>
+                  <th>Hobbies</th>
+                  <th>Options</th>
+                </tr>
+              </thead>
               {display}
             </table>
           )}
