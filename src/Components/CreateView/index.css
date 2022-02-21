@@ -1,0 +1,48 @@
+.update-body {
+	margin: 50px auto;
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: 100px auto;
+	background-color: white;
+	padding: 100px;
+	border-radius: 30px;
+	width: 40%;
+	border: 1px solid black;
+}
+.main-body {
+	position: absolute;
+	width: 100%;
+	height: max-content;
+	background-color: gray;
+	top: 0;
+	left: 0;
+}
+.heading {
+	grid-column: 1/3;
+	background-color: turquoise;
+	color: white;
+	padding: 10px;
+	font-size: 2em;
+}
+.submit-button {
+	grid-column: 1/3;
+	background-color: yellowgreen;
+	color: white;
+	padding: 30px;
+	border-width: 0;
+	border-radius: 30px;
+	width: 50%;
+	font-size: 1.2em;
+	margin: auto;
+}
+.submit-button:hover {
+	background-color: green;
+}
+.item-text {
+	text-align: start;
+}
+.item-input {
+	border-radius: 20px;
+	height: auto;
+	padding: 10px;
+}
