@@ -3,10 +3,11 @@ h1 {
 }
 .commentBox,
 .commentBoxHead {
-  border: 1px solid white;
+  border: 3px solid white;
   width: 300px;
   text-align: center;
-  padding: 10px;
+  padding: 2rem;
+  border-radius: 5px 30px;
   display: flex;
   flex-direction: column;
 }
@@ -57,9 +58,11 @@ p {
 .replyContainer {
   display: flex;
   flex-direction: column;
-  border: 1px solid white;
+  border: 2px solid white;
   margin-left: 40px;
-  padding: 5px;
+  border-radius: 5px 20px;
+  padding: 0.8rem;
+  margin-top: 1.3rem;
 }
 .replyText {
   text-align: start;
