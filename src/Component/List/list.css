@@ -1,0 +1,75 @@
+h1 {
+  color: white;
+}
+.commentBox,
+.commentBoxHead {
+  border: 1px solid white;
+  width: 300px;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.commentBoxHead {
+  border: none;
+}
+.isLike {
+  color: red;
+}
+.isNotLike {
+  color: white;
+}
+.innerCommentText,
+.innerCommentButton,
+.innerCommentReply {
+  display: flex;
+  color: white;
+  font-size: 1.5em;
+}
+.innerCommentText {
+  justify-content: flex-start;
+  text-align: start;
+}
+.innerCommentButton {
+  justify-content: flex-end;
+}
+.innerCommentButton > * {
+  margin: 0 10px;
+}
+.innerCommentReply {
+  flex-direction: column;
+}
+.Container {
+  display: flex;
+  flex-direction: column;
+}
+p {
+  color: white;
+}
+.replyComment {
+  border: 1px solid white;
+  width: 300px;
+  text-align: center;
+  margin-left: 40px;
+  position: absolute;
+  padding: 10px;
+}
+.replyContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  margin-left: 40px;
+  padding: 5px;
+}
+.replyText {
+  text-align: start;
+  color: white;
+}
+.replyButton {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+.replyButton > * {
+  margin: 0 10px;
+}
