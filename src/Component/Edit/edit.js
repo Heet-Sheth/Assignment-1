@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./edit.css";
 import axios from "axios";
 import ListComment from "../List/list";
-import { useParams } from "react-router-dom";
 function EditComent(props) {
   let num = window.location.pathname.slice(
     window.location.pathname.lastIndexOf("/")

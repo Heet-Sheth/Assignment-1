@@ -18,7 +18,15 @@ function CommentPage() {
           <ListComment />
         )}
         <div className="addBtn" onClick={() => setWrite(!writer)}>
-          <div className="addBtnInnertext">+</div>
+          {writer ? (
+            <div className="addBtnInnertext closed" title="Close?">
+              +
+            </div>
+          ) : (
+            <div className="addBtnInnertext" title="New Comment?">
+              +
+            </div>
+          )}
         </div>
         <Switch>
           <Route path="/edit/:num">

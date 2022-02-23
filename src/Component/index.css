@@ -10,6 +10,10 @@
   border: 1px solid white;
   bottom: 50px;
   right: 50px;
+  transition-duration: 0.5s;
+}
+.closed {
+  transform: rotate(45deg);
 }
 .addBtnInnertext {
   color: white;

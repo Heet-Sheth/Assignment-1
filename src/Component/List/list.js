@@ -3,7 +3,6 @@ import axios from "axios";
 import "./list.css";
 import EditComent from "../Edit/edit";
 import AddSubComment from "../AddSub/addSub";
-let ren = 0;
 function ListComment() {
   const [Comment, setComments] = useState([]);
   const [sub, setSub] = useState([]);
@@ -30,9 +29,7 @@ function ListComment() {
         .then((resp) => {
           sub
             .filter((item) => item.parent === resp.data.id)
-            .map((items) => {
-              deleteReply(true, items.id);
-            });
+            .map((items) => deleteReply(true, items.id));
           let data1 = Comment;
           let index = data1.findIndex((element) => element.id === resp.data.id);
           data1.splice(index, 1);
