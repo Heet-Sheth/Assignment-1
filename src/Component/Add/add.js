@@ -17,7 +17,7 @@ function AddComment(props) {
       .catch((error) => alert(error));
   };
   return (
-    <div className="Container">
+    <div className="addContainer">
       <form onSubmit={(e) => addComment(e)}>
         <h1>Add Comment</h1>
         <textarea
