@@ -29,7 +29,7 @@ function CommentPage() {
           )}
         </div>
         <Switch>
-          <Route path="/edit/:num">
+          <Route path="/edit">
             <EditComent />
           </Route>
           <Route path="/read">
