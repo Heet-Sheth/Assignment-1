@@ -11,6 +11,7 @@ function ListComment() {
   const [updata, setUpdatabledata] = useState([]);
   const [showAdd, setAddSUb] = useState(false);
   const [id4sub, setId4Sub] = useState();
+  const [commentORReply, setCOR] = useState("");
   useEffect(() => {
     axios
       .get("https://61fd0f4cf62e220017ce42d7.mockapi.io/Comments")
@@ -57,7 +58,7 @@ function ListComment() {
     });
   };
   const changeComment = (element) => {
-    window.history.pushState("Data", "Title", "/edit/0");
+    setCOR("Main");
     setUpdatabledata(element);
     setUpdate(true);
   };
@@ -84,7 +85,7 @@ function ListComment() {
     });
   };
   const changeReply = (element) => {
-    window.history.pushState("Data", "Title", "/edit/1");
+    setCOR("Sub");
     setUpdatabledata(element);
     setUpdate(true);
   };
@@ -189,7 +190,7 @@ function ListComment() {
       ) : (
         <div>
           {showUpdate ? (
-            <EditComent commentData={updata} />
+            <EditComent commentData={updata} typeofComment={commentORReply} />
           ) : (
             <div className="Container">
               <div className="commentBoxHead">

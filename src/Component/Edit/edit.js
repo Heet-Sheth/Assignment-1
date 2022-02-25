@@ -3,9 +3,7 @@ import "./edit.css";
 import axios from "axios";
 import ListComment from "../List/list";
 function EditComent(props) {
-  let num = window.location.pathname.slice(
-    window.location.pathname.lastIndexOf("/")
-  );
+  const num = props.typeofComment;
   const { commentData } = props;
   const [show, setShow] = useState(true);
   const [comment, setComments] = useState({
@@ -17,9 +15,8 @@ function EditComent(props) {
   };
   const addComment = (e) => {
     e.preventDefault();
-    console.log(num);
     let urlText =
-      num === "/0"
+      num === "Main"
         ? `https://61fd0f4cf62e220017ce42d7.mockapi.io/Comments/${comment.id}`
         : `https://61fd0f4cf62e220017ce42d7.mockapi.io/subComment/${comment.id}`;
     axios({
