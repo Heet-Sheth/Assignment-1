@@ -20,7 +20,7 @@ function AddSubComment(props) {
         window.history.pushState("Data", "Title", "/");
         updatedAdded(true);
       })
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error));
   };
   return (
     <div className="Container">

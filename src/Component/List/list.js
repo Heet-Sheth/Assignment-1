@@ -16,12 +16,12 @@ function ListComment() {
     axios
       .get("https://61fd0f4cf62e220017ce42d7.mockapi.io/Comments")
       .then((resp) => setComments(resp.data))
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error));
 
     axios
       .get("https://61fd0f4cf62e220017ce42d7.mockapi.io/subComment")
       .then((resp) => setSub(resp.data))
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error));
   }, []);
   const deleteItem = (id) => {
     if (window.confirm("Are you sure you want to delete?")) {

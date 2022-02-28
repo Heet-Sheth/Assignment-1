@@ -28,7 +28,7 @@ function EditComent(props) {
         window.history.pushState("Data", "Title", "/read");
         setShow(false);
       })
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error));
   };
   return (
     <div>

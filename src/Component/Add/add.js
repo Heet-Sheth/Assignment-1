@@ -14,7 +14,7 @@ function AddComment(props) {
       data: { name: text, like: false },
     })
       .then((resp) => props.callParentFunction())
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error));
   };
   return (
     <div className="addContainer">
