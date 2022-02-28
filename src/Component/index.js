@@ -16,15 +16,7 @@ function CommentPage() {
           <ListComment />
         )}
         <div className="addBtn" onClick={() => setWrite(!writer)}>
-          {writer ? (
-            <div className="addBtnInnertext closed" title="Close?">
-              +
-            </div>
-          ) : (
-            <div className="addBtnInnertext" title="New Comment?">
-              +
-            </div>
-          )}
+          <div className={`addBtnInnertext ${writer ? "closed" : ""}`}>+</div>
         </div>
       </div>
     </div>

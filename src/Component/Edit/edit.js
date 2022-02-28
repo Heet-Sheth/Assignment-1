@@ -15,10 +15,9 @@ function EditComent(props) {
   };
   const addComment = (e) => {
     e.preventDefault();
-    let urlText =
-      num === "Main"
-        ? `https://61fd0f4cf62e220017ce42d7.mockapi.io/Comments/${comment.id}`
-        : `https://61fd0f4cf62e220017ce42d7.mockapi.io/subComment/${comment.id}`;
+    let urlText = `https://61fd0f4cf62e220017ce42d7.mockapi.io/${
+      num === "Main" ? "Comments" : "subComment"
+    }/${comment.id}`;
     if (comment.name === "") alert("Please type any comment...");
     else {
       axios({
