@@ -138,6 +138,7 @@ function ListComment() {
                   <div className="replyMsg">
                     <div className="replyText">{items.name}</div>
                     <div className="replyButton">
+                      {/* Reply Like Button */}
                       <span
                         className={items.like ? "isLike" : "isNotLike"}
                         onClick={() => likeReply(items.id)}
@@ -145,9 +146,11 @@ function ListComment() {
                       >
                         ❤
                       </span>
+                      {/* Reply Edit Button */}
                       <span title="Change?" onClick={() => changeReply(items)}>
                         ✎
                       </span>
+                      {/* Reply Delete Button */}
                       <span
                         title="Delete?"
                         onClick={() => deleteReply(false, items.id)}

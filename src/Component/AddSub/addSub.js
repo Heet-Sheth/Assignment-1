@@ -4,23 +4,26 @@ import axios from "axios";
 import ListComment from "../List/list";
 function AddSubComment(props) {
   const { id } = props;
-  const [text, setText] = useState();
+  const [text, setText] = useState("");
   const [added, updatedAdded] = useState(false);
   const handleChange = (text) => {
     setText(text);
   };
   const addComment = (e) => {
     e.preventDefault();
-    axios({
-      url: "https://61fd0f4cf62e220017ce42d7.mockapi.io/subComment",
-      method: "POST",
-      data: { name: text, like: false, parent: id },
-    })
-      .then((resp) => {
-        window.history.pushState("Data", "Title", "/");
-        updatedAdded(true);
+    if (text === "") alert("Please type any comment...");
+    else {
+      axios({
+        url: "https://61fd0f4cf62e220017ce42d7.mockapi.io/subComment",
+        method: "POST",
+        data: { name: text, like: false, parent: id },
       })
-      .catch((error) => console.log(error));
+        .then((resp) => {
+          window.history.pushState("Data", "Title", "/");
+          updatedAdded(true);
+        })
+        .catch((error) => console.log(error));
+    }
   };
   return (
     <div className="Container">
@@ -44,7 +47,6 @@ function AddSubComment(props) {
             >
               &lt;
             </button>
-            {/* <input type="submit" value="✔" /> */}
             <button onClick={(e) => addComment(e)}>✔</button>
           </div>
         </form>

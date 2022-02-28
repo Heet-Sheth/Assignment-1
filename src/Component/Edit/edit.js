@@ -19,16 +19,19 @@ function EditComent(props) {
       num === "Main"
         ? `https://61fd0f4cf62e220017ce42d7.mockapi.io/Comments/${comment.id}`
         : `https://61fd0f4cf62e220017ce42d7.mockapi.io/subComment/${comment.id}`;
-    axios({
-      url: urlText,
-      method: "PUT",
-      data: { name: comment.name, like: false },
-    })
-      .then((resp) => {
-        window.history.pushState("Data", "Title", "/read");
-        setShow(false);
+    if (comment.name === "") alert("Please type any comment...");
+    else {
+      axios({
+        url: urlText,
+        method: "PUT",
+        data: { name: comment.name, like: false },
       })
-      .catch((error) => console.log(error));
+        .then((resp) => {
+          window.history.pushState("Data", "Title", "/read");
+          setShow(false);
+        })
+        .catch((error) => console.log(error));
+    }
   };
   return (
     <div>
@@ -52,7 +55,6 @@ function EditComent(props) {
               >
                 &lt;
               </button>
-              {/* <input type="submit" value="✔" /> */}
               <button onClick={(e) => addComment(e)}>✔</button>
             </div>
           </form>
