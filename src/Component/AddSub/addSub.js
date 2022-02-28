@@ -19,7 +19,6 @@ function AddSubComment(props) {
         data: { name: text, like: false, parent: id },
       })
         .then((resp) => {
-          window.history.pushState("Data", "Title", "/");
           updatedAdded(true);
         })
         .catch((error) => console.log(error));
@@ -41,7 +40,6 @@ function AddSubComment(props) {
           <div className="buttonBox">
             <button
               onClick={() => {
-                window.history.pushState("data", "title", "/read");
                 updatedAdded(true);
               }}
             >

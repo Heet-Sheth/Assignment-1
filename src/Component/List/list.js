@@ -63,7 +63,6 @@ function ListComment() {
     setUpdate(true);
   };
   const addReply = (id) => {
-    window.history.pushState("Data", "Title", "/addsub");
     setId4Sub(id);
     setAddSUb(true);
   };

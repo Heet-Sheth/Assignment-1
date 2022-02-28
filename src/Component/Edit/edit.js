@@ -27,7 +27,6 @@ function EditComent(props) {
         data: { name: comment.name, like: false },
       })
         .then((resp) => {
-          window.history.pushState("Data", "Title", "/read");
           setShow(false);
         })
         .catch((error) => console.log(error));
@@ -49,7 +48,6 @@ function EditComent(props) {
             <div className="innerContainer">
               <button
                 onClick={() => {
-                  window.history.pushState("Data", "Title", "/read");
                   setShow(false);
                 }}
               >

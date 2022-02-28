@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
 import AddComment from "./Add/add";
-import EditComent from "./Edit/edit";
 import "./index.css";
 import ListComment from "./List/list";
 function CommentPage() {
@@ -11,7 +9,7 @@ function CommentPage() {
   };
   return (
     <div>
-      <BrowserRouter className="homeContainer">
+      <div className="homeContainer">
         {writer ? (
           <AddComment callParentFunction={() => hideShow()} />
         ) : (
@@ -28,15 +26,7 @@ function CommentPage() {
             </div>
           )}
         </div>
-        <Switch>
-          <Route path="/edit">
-            <EditComent />
-          </Route>
-          <Route path="/read">
-            <ListComment />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      </div>
     </div>
   );
 }
