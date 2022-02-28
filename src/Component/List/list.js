@@ -114,23 +114,13 @@ function ListComment() {
               ⤺
             </span>
             {/* Like Button */}
-            {element.like ? (
-              <span
-                className="isLike"
-                title="Dislike?"
-                onClick={() => changeLike(element.id)}
-              >
-                ❤
-              </span>
-            ) : (
-              <span
-                className="isNotLike"
-                title="Like?"
-                onClick={() => changeLike(element.id)}
-              >
-                ❤
-              </span>
-            )}
+            <span
+              className={element.like ? "isLike" : "isNotLike"}
+              onClick={() => changeLike(element.id)}
+              title={element.like ? "Dislike?" : "Like?"}
+            >
+              ❤
+            </span>
             {/* Edit Button */}
             <span title="Change?" onClick={() => changeComment(element)}>
               ✎
@@ -148,23 +138,13 @@ function ListComment() {
                   <div className="replyMsg">
                     <div className="replyText">{items.name}</div>
                     <div className="replyButton">
-                      {items.like ? (
-                        <span
-                          className="isLike"
-                          title="Dislike?"
-                          onClick={() => likeReply(items.id)}
-                        >
-                          ❤
-                        </span>
-                      ) : (
-                        <span
-                          className="isNotLike"
-                          title="Like?"
-                          onClick={() => likeReply(items.id)}
-                        >
-                          ❤
-                        </span>
-                      )}
+                      <span
+                        className={items.like ? "isLike" : "isNotLike"}
+                        onClick={() => likeReply(items.id)}
+                        title={items.like ? "Dislike?" : "Like?"}
+                      >
+                        ❤
+                      </span>
                       <span title="Change?" onClick={() => changeReply(items)}>
                         ✎
                       </span>

@@ -6,7 +6,8 @@ function AddComment(props) {
   const handleChange = (text) => {
     setText(text);
   };
-  const addComment = () => {
+  const addComment = (e) => {
+    e.preventDefault();
     axios({
       url: "https://61fd0f4cf62e220017ce42d7.mockapi.io/Comments",
       method: "POST",
@@ -26,7 +27,7 @@ function AddComment(props) {
           onChange={(e) => handleChange(e.target.value)}
         ></textarea>
         {/* <input type="submit" value="✔" /> */}
-        <button onClick={addComment}>✔</button>
+        <button onClick={(e) => addComment(e)}>✔</button>
       </form>
     </div>
   );

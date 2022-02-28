@@ -34,7 +34,7 @@ function EditComent(props) {
     <div>
       {show ? (
         <div className="Container">
-          <form onSubmit={(e) => addComment(e)}>
+          <form>
             <h1>Edit</h1>
             <textarea
               placeholder="Comment..."
@@ -52,7 +52,8 @@ function EditComent(props) {
               >
                 &lt;
               </button>
-              <input type="submit" value="✔" />
+              {/* <input type="submit" value="✔" /> */}
+              <button onClick={(e) => addComment(e)}>✔</button>
             </div>
           </form>
         </div>

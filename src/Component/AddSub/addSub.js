@@ -27,7 +27,7 @@ function AddSubComment(props) {
       {added ? (
         <ListComment />
       ) : (
-        <form onSubmit={(e) => addComment(e)}>
+        <form>
           <h1>Reply</h1>
           <textarea
             placeholder="Comment..."
@@ -44,7 +44,8 @@ function AddSubComment(props) {
             >
               &lt;
             </button>
-            <input type="submit" value="✔" />
+            {/* <input type="submit" value="✔" /> */}
+            <button onClick={(e) => addComment(e)}>✔</button>
           </div>
         </form>
       )}
